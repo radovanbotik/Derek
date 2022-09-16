@@ -1,0 +1,53 @@
+$colors: (
+  color-font: #6a348e,
+  color-bg: #f3bfe5,
+  color-accent-1: #fffcff,
+  color-accent-2: #c19cc1,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  height: 100vh;
+  background-image: url(../images/magnum-big.webp);
+  background-position: center;
+  background-size: cover;
+
+  .intro {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+  }
+  .image-slider {
+    width: 250px;
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      transition: all 250ms ease-in;
+    }
+  }
+}
